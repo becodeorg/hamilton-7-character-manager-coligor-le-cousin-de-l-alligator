@@ -513,6 +513,23 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.bg-Charcoal {
+  --tw-bg-opacity: 1;
+  background-color: rgb(47 69 80 / var(--tw-bg-opacity));
+}
+
+.text-whitePolice {
+  --tw-text-opacity: 1;
+  color: rgb(244 244 249 / var(--tw-text-opacity));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .h-full {
   height: 100%;
 }
