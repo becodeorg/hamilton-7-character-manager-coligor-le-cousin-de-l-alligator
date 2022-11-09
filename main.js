@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./CSS/style.css";
 
 let search = document.getElementById("myInput");
@@ -14,3 +15,6 @@ for (i = 0; i < div.length; i++) {
   }
 }
 async fetch
+=======
+import './style.css'
+>>>>>>> fb0711d883049b10cd569cb4a61d8ae3efa9a512
