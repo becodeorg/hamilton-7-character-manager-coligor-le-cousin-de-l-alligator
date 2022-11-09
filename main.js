@@ -13,3 +13,4 @@ for (i = 0; i < div.length; i++) {
     div[i].style.display = "none";
   }
 }
+async fetch
