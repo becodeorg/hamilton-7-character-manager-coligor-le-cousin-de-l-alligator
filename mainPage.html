@@ -6,20 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Character-Manager</title>
   </head>
-  <body class="bg-Charcoal">
-    <h1 class="text-whitePolice">Character Manager</h1>
+  <body class="bg-Charcoal bodyMainpage">
+    <h1 class="text-whitePolice text-4xl mx-60 mt-6 mb-10 font-extrabold">
+      Character Manager
+    </h1>
+
     <input
       type="text"
       id="myInput"
-      onkeyup="Searching()"
       placeholder="Search for names.."
       title="Type in a name"
+      class="ml-12 mb-7 h-8"
     />
+    <a href="" class="cursor-pointer">
+      <div class="container">
+        <div class="center">
+          <button class="btn">
+            <svg
+              width="180px"
+              height="60px"
+              viewBox="0 0 180 60"
+              class="border"
+            >
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+            </svg>
+            <span>ADD</span>
+          </button>
+        </div>
+      </div>
+    </a>
+
     <!--<pre id="log"></pre>-->
 
     <section id="flex-wrap" class="flex flex-wrap"></section>
 
-    <button></button>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

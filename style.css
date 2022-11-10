@@ -1,13 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
-/*.profileCard:hover {
+.profileCard:hover {
   transform: rotateY(360deg);
 
   transition: 1.3s;
   transform-style: preserve-3d;
 
   position: relative;
+  background: #2f4550;
 }
-*/
+.profileCard {
+  background: rgb(184, 219, 217);
+  background: linear-gradient(
+    0deg,
+    rgba(184, 219, 217, 1) 0%,
+    rgba(47, 69, 80, 1) 100%
+  );
+}
+.bodyMainpage {
+  background: #586f7c;
+  /* font-family: Poppins;*/
+}
+.container {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 80%;
+  top: 18%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  width: 180px;
+  height: 60px;
+  position: absolute;
+}
+
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91c9ff;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: #2f4550;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
