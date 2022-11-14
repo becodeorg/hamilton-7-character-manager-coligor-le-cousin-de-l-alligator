@@ -17,7 +17,7 @@ btnSave.addEventListener('click', () => {
 
     sendRequest(name, shortDescription, description, getImage);
 
-    location.reload();
+    window.location.reload();
     
 })
 
