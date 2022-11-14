@@ -38,7 +38,7 @@ async function sendRequest(name, shortDescription, description, getImage) {
 }
 
 cross.addEventListener('click', () => {
-    window.location.href='./mainPage.html'
+    window.location.href='./index.html'
 })
 
 
