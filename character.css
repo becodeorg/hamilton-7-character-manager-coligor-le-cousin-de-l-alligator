@@ -1,5 +1,52 @@
-body background-color: 2f4550
-main background-color: 586f7c
-    color: f4f4f9
- H2 H1 text-transform: uppercase;
- span opacity 60%
+h1 h2 {
+    text-transform : uppercase;
+    font-weight: bold;
+}
+body {
+    background-color: #2f4550;
+    color: #f4f4f9;
+    font-family: 'Poppins', sans-serif;
+    margin: 50px;
+}
+main {
+    background-color: #586f7c;
+    border-radius: 25px;
+    padding:3% 10% ;
+    margin-top: 50px;
+}
+
+.Character__btn {
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    background-color: #2f4550 ;
+    border-radius: 15px;
+    padding: 15px ;
+    margin: 15px;
+    color: #f4f4f9;
+}
+
+span {
+    opacity: 60%;
+}
+
+.Character__profil {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    background-size: cover ;
+}
+
+button:hover {
+background-color: lightblue;
+color: white;
+}
