@@ -3,7 +3,6 @@ import axios from 'axios'
 /*Query Selector*/
 const btnSave = document.getElementById('save');
 const btnDelete = document.getElementById('delete');
-const cross = document.getElementById('cross');
 const form = document.getElementById('form');
 const imgInput = document.getElementById('input-img');
 const imgArea = document.getElementById('myimage');
@@ -36,11 +35,6 @@ async function sendRequest(name, shortDescription, description, getImage) {
         console.log(error);
     }
 }
-
-cross.addEventListener('click', () => {
-    window.location.href='./index.html'
-})
-
 
 selectImg.addEventListener('click', () => {
     imgInput.click();
