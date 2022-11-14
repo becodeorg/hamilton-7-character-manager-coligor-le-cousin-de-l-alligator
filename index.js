@@ -1,6 +1,7 @@
 import axios from "axios";
 
 /*Query Selector*/
+<<<<<<< HEAD
 const btnSave = document.getElementById("save");
 const btnDelete = document.getElementById("delete");
 const form = document.getElementById("form");
@@ -21,6 +22,27 @@ btnSave.addEventListener("click", () => {
 
   location.reload();
 });
+=======
+const btnSave = document.getElementById('save');
+const btnDelete = document.getElementById('delete');
+const form = document.getElementById('form');
+const imgInput = document.getElementById('input-img');
+const imgArea = document.getElementById('myimage');
+const selectImg = document.getElementById('select-img');
+
+btnSave.addEventListener('click', () => {
+
+    const getImage = document.getElementById('getImage').src.replace("data:", "").replace(/^.+,/, "");
+    const name = document.getElementById('name').value;
+    const shortDescription = document.getElementById('short-description').value;
+    const description = document.getElementById('description').value;
+
+    sendRequest(name, shortDescription, description, getImage);
+
+    window.location.reload();
+    
+})
+>>>>>>> 7fd3f62a838919932346c12c45e0194a785e271b
 
 async function sendRequest(name, shortDescription, description, getImage) {
   try {
