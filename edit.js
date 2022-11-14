@@ -1,6 +1,32 @@
 import axios from "axios";
 
-/*Query Selector*/
+let id = localStorage.getItem("id");
+
+async function generateCharacter() {
+  let object = await axios.get(
+    "https://character-database.becode.xyz/characters/" + id
+  );
+
+  let character = object.data;
+
+  let divImage = document.getElementById("myimage");
+  let img = document.createElement("img");
+  let srcImg = "data:image/gif;base64," + character["image"];
+  img.src = srcImg;
+  console.log(srcImg);
+  img.className = "imgProfile rounded-full mb-6 h-32";
+  img.alt = character["name"];
+  divImage.appendChild(img);
+  //let divImage = document.getElementById("myimage");
+  let inputName = document.getElementById("name");
+  inputName.value = character["name"];
+  let shortDescription = document.getElementById("short-description");
+  shortDescription.value = character["shortDescription"];
+  let description = document.getElementById("description");
+  description.value = character["description"];
+}
+generateCharacter();
+
 const btnSave = document.getElementById("save");
 const btnDelete = document.getElementById("delete");
 const form = document.getElementById("form");

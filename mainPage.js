@@ -1,6 +1,9 @@
 import axios from "axios";
 let arr = [];
-
+function clearStorage() {
+  localStorage.clear();
+}
+clearStorage();
 async function generate() {
   let response = await axios.get(
     "https://character-database.becode.xyz/characters"
