@@ -1,15 +1,14 @@
-const { resolve } = require("path");
-const { defineConfig } = require("vite");
+const { resolve } = require('path')
+const { root } = require('postcss')
 
-module.exports = defineConfig({
+module.exports = {
   build: {
     rollupOptions: {
       input: {
-        main: "./index.html",
-        new: "./newCharacter.html",
-        view: "./viewCharacter.html",
-        edit: "./editCharacter.html",
-      },
-    },
-  },
-});
+        main: './index.html',
+        create: './character-creator.html',
+        view: './singlecharacter.html'
+      }
+    }
+  }
+}
