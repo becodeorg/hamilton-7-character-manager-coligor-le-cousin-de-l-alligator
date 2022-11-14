@@ -1,29 +1,16 @@
 import axios from "axios";
-/*function Searching() {
-  let search = document.getElementById("myInput");
-  let filter = search.value.toUpperCase();
-  let section = document.getElementById("flex-wrap");
-  let div = section.getElementsByTagName("div");
-  for (i = 0; i < div.length; i++) {
-    let a = div[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      div[i].style.display = "";
-    } else {
-      div[i].style.display = "none";
-    }
-  }
-}*/
+let arr = [];
 
 async function generate() {
   let response = await axios.get(
     "https://character-database.becode.xyz/characters"
   );
-  let arr = response.data;
+  arr = response.data;
   console.log(arr);
   arr.forEach((element) => {
     const section = document.getElementById("flex-wrap");
     const div = document.createElement("div");
+    div.id = "divProfile";
     div.className =
       "profileCard mx-5 my-7 flex items-center flex-col text-center bg-BgCard p-3 text-whitePolice w-64 h-96 rounded-2xl drop-shadow-xl";
     section.appendChild(div);
@@ -49,100 +36,45 @@ async function generate() {
     p.innerText = descriptionMainPage;
     div.appendChild(p);
     // creating Button
+    let a = document.createElement("a");
+    a.href = "singlecharacter.html";
     let button = document.createElement("button");
+    let idEvent = element.id;
     button.id = element.id;
+
+    button.onclick = function storage() {
+      localStorage.setItem("id", idEvent);
+    };
     button.className =
       "bg-white text-black p-3 rounded-lg hover:bg-black hover:text-white m-1";
 
     button.innerText = "See the Character";
-    div.appendChild(button);
+    a.appendChild(button);
+    div.appendChild(a);
   });
 }
-/*Load console log on the screen
-(function () {
-  let old = console.log;
-  let logger = document.getElementById("log");
-  console.log = function () {
-    for (let i = 0; i < arguments.length; i++) {
-      if (typeof arguments[i] == "object") {
-        logger.innerHTML +=
-          (JSON && JSON.stringify
-            ? JSON.stringify(arguments[i], undefined, 2)
-            : arguments[i]) + "<br />";
-      } else {
-        logger.innerHTML += arguments[i] + "<br />";
-      }
-    }
-  };
-})();*/
+
 generate();
 
-/*let searchInput = document.getElementsById("myInput");
+//almost
+let searchInput = document.getElementById("myInput");
 
 searchInput.addEventListener("keyup", function (event) {
   let searchQuery = event.target.value.toLowerCase();
-  // console.log(event.target.value)
-  // console.log(username.value)
+
   console.log(searchQuery);
 
-  let allNamesDOMCollection = document.getElementsById("forSearch"); // can also use getElementByTagName('li')
-  // console.log(allNamesDOMCollection
+  let allNames = document.querySelectorAll("#forSearch");
+  console.log(allNames);
 
-  for (let i = 0; i < allNamesDOMCollection.length; i++) {
-    const currentName = allNamesDOMCollection[i].textContent.toLowerCase();
-    // console.log(searchQuery.length)
+  for (let i = 0; i < allNames.length; i++) {
+    const currentName = allNames[i].textContent.toLowerCase();
 
-    //searchQuery == currentName.substring(0,searchQuery.length)
-    // 'k' == karl.substring(0,1) (k)
-    // this method only search from start
     if (currentName.includes(searchQuery)) {
       console.log(currentName);
-      allNamesDOMCollection[i].style.display = "block";
+      allNames[i].parentNode.style.display = "inline-flex";
     } else {
-      // document.getElementById('result name').style.display = 'none'
-      allNamesDOMCollection[i].style.display = "none";
+      allNames[i].parentNode.style.display = "none";
     }
   }
-});*/
-const charactersList = document.getElementById("flex-wrap");
-const searchBar = document.getElementById("myInput");
-let hpCharacters = [];
-
-searchBar.addEventListener("keyup", (e) => {
-  const searchString = e.target.value.toLowerCase();
-
-  const filteredCharacters = hpCharacters.filter((character) => {
-    return (
-      character.name.toLowerCase().includes(searchString) ||
-      character.house.toLowerCase().includes(searchString)
-    );
-  });
-  displayCharacters(filteredCharacters);
 });
-
-/*const loadCharacters = async () => {
-    try {
-        const res = await fetch('https://hp-api.herokuapp.com/api/characters%27);
-        hpCharacters = await res.json();
-        displayCharacters(hpCharacters);
-    } catch (err) {
-        console.error(err);
-    }
-};
-
-const displayCharacters = (characters) => {
-    const htmlString = characters
-        .map((character) => {
-            return 
-            <li class="character">
-                <h2>${character.name}</h2>
-                <p>House: ${character.house}</p>
-                <img src="${character.image}"></img>
-            </li>
-        ;
-        })
-        .join('');
-    charactersList.innerHTML = htmlString;
-};
-*/
-loadCharacters();
