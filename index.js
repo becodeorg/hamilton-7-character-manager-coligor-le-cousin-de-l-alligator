@@ -2,8 +2,6 @@ import axios from "axios";
 
 /*Query Selector*/
 const btnSave = document.getElementById("save");
-const btnDelete = document.getElementById("delete");
-const form = document.getElementById("form");
 const imgInput = document.getElementById("input-img");
 const imgArea = document.getElementById("myimage");
 const selectImg = document.getElementById("select-img");
@@ -16,7 +14,6 @@ btnSave.addEventListener("click", () => {
 
   sendRequest(name, shortDescription, description, getImage);
 
-  window.location.reload();
 });
 
 async function sendRequest(name, shortDescription, description, getImage) {
@@ -34,6 +31,8 @@ async function sendRequest(name, shortDescription, description, getImage) {
   } catch (error) {
     console.log(error);
   }
+
+  window.location.href = './index.html';
 }
 
 selectImg.addEventListener("click", () => {
@@ -63,3 +62,6 @@ imgInput.addEventListener("change", (e) => {
 
   reader.readAsDataURL(image);
 });
+
+
+

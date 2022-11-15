@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let id = localStorage.getItem("id");
+const id = localStorage.getItem("id")
 
 async function generateCharacter() {
   let object = await axios.get(
@@ -13,6 +13,7 @@ async function generateCharacter() {
   let img = document.createElement("img");
   let srcImg = "data:image/gif;base64," + character["image"];
   img.src = srcImg;
+  img.setAttribute('id', 'getImage');
   console.log(srcImg);
   img.className = "imgProfile rounded-full mb-6 h-32";
   img.alt = character["name"];
@@ -42,13 +43,12 @@ btnSave.addEventListener("click", () => {
 
   sendRequest(name, shortDescription, description, getImage);
 
-  location.reload();
 });
 
 async function sendRequest(name, shortDescription, description, getImage) {
   try {
     const response = await axios.put(
-      "https://character-database.becode.xyz/characters",
+      `https://character-database.becode.xyz/characters/${id}`,
       {
         name: name,
         shortDescription: shortDescription,
@@ -60,6 +60,8 @@ async function sendRequest(name, shortDescription, description, getImage) {
   } catch (error) {
     console.log(error);
   }
+
+  window.location.href = './index.html';
 }
 
 selectImg.addEventListener("click", () => {
@@ -80,12 +82,27 @@ imgInput.addEventListener("change", (e) => {
     imgArea.appendChild(img);
     imgArea.classList.remove("hidden");
     imgArea.classList.add("block");
-    imgArea.firstChild.setAttribute("id", "getImage");
+    imgArea.lastChild.setAttribute("id", "getImage");
     img.classList = "h-36 w-36 rounded-full border-2";
     if (imgArea.children.length == 2) {
       imgArea.removeChild(imgArea.firstChild);
     }
+    console.log(image.src);
   };
 
   reader.readAsDataURL(image);
 });
+
+btnDelete.addEventListener('click', deletecharacter);
+
+async function deletecharacter() {
+    try {
+        const response = await axios.delete(`https://character-database.becode.xyz/characters/${id}`);
+        console.log(response);
+    }
+    catch(error) {
+        console.log(error);
+    }
+    
+    window.location.href = './index.html';
+}
