@@ -9,10 +9,7 @@ const imgArea = document.getElementById("myimage");
 const selectImg = document.getElementById("select-img");
 
 btnSave.addEventListener("click", () => {
-  const getImage = document
-    .getElementById("getImage")
-    .src.replace("data:", "")
-    .replace(/^.+,/, "");
+  const getImage = document.getElementById("getImage").src.replace("data:", "").replace(/^.+,/, "");
   const name = document.getElementById("name").value;
   const shortDescription = document.getElementById("short-description").value;
   const description = document.getElementById("description").value;
@@ -25,15 +22,15 @@ btnSave.addEventListener("click", () => {
 async function sendRequest(name, shortDescription, description, getImage) {
   try {
     const response = await axios.post(
-      "https://character-database.becode.xyz/characters",
-      {
+      "https://character-database.becode.xyz/characters", {
+        
         name: name,
         shortDescription: shortDescription,
         description: description,
         image: getImage,
       }
     );
-    console.log(response);
+      console.log(response);
   } catch (error) {
     console.log(error);
   }

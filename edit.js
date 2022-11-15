@@ -50,7 +50,7 @@ btnSave.addEventListener("click", () => {
 
 async function sendRequest(name, shortDescription, description, getImage) {
   try {
-    const response = await axios.post(
+    const response = await axios.put(
       "https://character-database.becode.xyz/characters",
       {
         name: name,
