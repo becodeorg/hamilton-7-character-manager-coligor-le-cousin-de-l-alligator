@@ -20,8 +20,17 @@ textcharacter.innerText=singlecharacter ["description"];
 character()
 
 let deletebtn = document.getElementById("btn__singlecharacter");
-deletebtn.onclick= async function deletecharacter() {
-await axios.delete("https://character-database.becode.xyz/characters/" + id)
+
+deletebtn.addEventListener('click', deletecharacter);
+
+async function deletecharacter() {
+    try {
+        const response = await axios.delete("https://character-database.becode.xyz/characters/" + id);
+        console.log(response);
+    }
+    catch(error) {
+        console.log(error);
+    }
 }
 
 
