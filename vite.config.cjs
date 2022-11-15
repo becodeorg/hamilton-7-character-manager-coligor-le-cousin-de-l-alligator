@@ -7,7 +7,8 @@ module.exports = {
       input: {
         main: './index.html',
         create: './character-creator.html',
-        view: './singlecharacter.html'
+        view: './singlecharacter.html',
+        update: './editcharacter.html'
       }
     }
   }
