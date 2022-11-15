@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         Charcoal: "#2F4550",
         whitePolice: "#F4F4F9",
+        BgCard: "#586F7C",
+        DeepSpace: "#445A66",
       },
     },
     plugins: [],
