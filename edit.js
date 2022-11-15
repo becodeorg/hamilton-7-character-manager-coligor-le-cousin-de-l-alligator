@@ -15,7 +15,7 @@ async function generateCharacter() {
   img.src = srcImg;
   img.setAttribute('id', 'getImage');
   console.log(srcImg);
-  img.className = "imgProfile rounded-full mb-6 h-32";
+  img.classList = "h-36 w-36 rounded-full border-2";
   img.alt = character["name"];
   divImage.appendChild(img);
   //let divImage = document.getElementById("myimage");
