@@ -7,40 +7,45 @@
     <title>Character-Manager</title>
     <script type="module" crossorigin src="/assets/main.8e5f46da.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/axios.2c6588a7.js">
-    <link rel="stylesheet" href="/assets/axios.0db05df8.css">
+    <link rel="stylesheet" href="/assets/axios.85e56f40.css">
   </head>
   <body class="bg-Charcoal bodyMainpage">
     <h1 class="text-whitePolice text-4xl mx-60 mt-6 mb-10 font-extrabold">
       Character Manager
     </h1>
-
-    <input
-      type="text"
-      id="myInput"
-      placeholder="Search for names.."
-      title="Type in a name"
-      class="ml-12 mb-7 h-8"
-    />
-    <a href="./character-creator.html" class="cursor-pointer">
-      <div class="container">
-        <div class="center">
-          <button class="btn">
-            <svg
-              width="180px"
-              height="60px"
-              viewBox="0 0 180 60"
-              class="border"
-            >
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-            </svg>
-            <span>ADD</span>
-          </button>
+    <section class="flex flex-row justify-between content-center">
+      <input
+        type="text"
+        id="myInput"
+        placeholder="Search for names.."
+        title="Type in a name"
+        class="ml-12 mb-7 h-8"
+      />
+      <a href="./character-creator.html" class="cursor-pointer">
+        <div class="container">
+          <div class="center">
+            <button class="btn">
+              <svg
+                width="180px"
+                height="60px"
+                viewBox="0 0 180 60"
+                class="border"
+              >
+                <polyline
+                  points="179,1 179,59 1,59 1,1 179,1"
+                  class="bg-line"
+                />
+                <polyline
+                  points="179,1 179,59 1,59 1,1 179,1"
+                  class="hl-line"
+                />
+              </svg>
+              <span>ADD</span>
+            </button>
+          </div>
         </div>
-      </div>
-    </a>
-
-    <!--<pre id="log"></pre>-->
+      </a>
+    </section>
 
     <section id="flex-wrap" class="flex flex-wrap justify-center mt-50"></section>
 
