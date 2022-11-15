@@ -1,4 +1,6 @@
 import axios from "axios";
+
+
 let id=localStorage.getItem("id");
 async function character() {
     let object = await axios.get("https://character-database.becode.xyz/characters/" + id);
@@ -25,12 +27,14 @@ deletebtn.addEventListener('click', deletecharacter);
 
 async function deletecharacter() {
     try {
-        const response = await axios.delete("https://character-database.becode.xyz/characters/" + id);
+        const response = await axios.delete(`https://character-database.becode.xyz/characters/${id}`);
         console.log(response);
     }
     catch(error) {
         console.log(error);
     }
+
+    window.location.href = './index.html';
 }
 
 
